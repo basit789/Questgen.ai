@@ -5,7 +5,6 @@ import torch
 from transformers import T5ForConditionalGeneration,T5Tokenizer
 import random
 import spacy
-import boto3
 import zipfile
 import os
 import json
@@ -152,7 +151,7 @@ def get_nouns_multipartite(text):
     pos = {'PROPN', 'NOUN'}
     stoplist = list(string.punctuation)
     stoplist += stopwords.words('english')
-    extractor.candidate_selection(pos=pos, stoplist=stoplist)
+    extractor.candidate_selection(pos=pos)
     # 4. build the Multipartite graph and rank candidates using random walk,
     #    alpha controls the weight adjustment mechanism, see TopicRank for
     #    threshold/method parameters.
