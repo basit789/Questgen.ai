@@ -106,7 +106,7 @@ class QGen:
     def predict_shortq(self, payload):
         inp = {
             "input_text": payload.get("input_text"),
-            "max_questions": payload.get("max_questions", 4)
+            "max_questions": payload.get("max_questions", 10)
         }
 
         text = inp['input_text']
